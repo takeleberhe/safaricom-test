@@ -12,6 +12,7 @@ import com.safaricom.BankApplication.entity.tbl_bank;
 import com.safaricom.BankApplication.mapper.bankMapper;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -31,13 +32,9 @@ public class bankController {
 
     @GetMapping
     public ResponseEntity<List<bankDto>> getAllBanks(bankDto dto){
-        return ResponseEntity.ok(service.getAllbanks().stream().map(mapper::toDto)).Collect(Collctors.toList);
+        return ResponseEntity.ok(service.getAllbanks());
 
     }
-
-
-
-
 
 
 }
